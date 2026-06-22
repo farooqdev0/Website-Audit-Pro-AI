@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Website Audit Pro AI V3</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="bg-blur blur-1"></div>
+<div class="bg-blur blur-2"></div>
+
+<div class="container">
+
+<!-- ==========================
+HEADER
+========================== -->
+
+<header>
+
+<div class="logo-area">
+
+<img src="assets/logo.png" alt="Logo">
+
+<div>
+
+<h1>Website Audit Pro AI</h1>
+
+<span>
+Next Generation Website Intelligence
+</span>
+
+</div>
+
+</div>
+
+<div class="header-actions">
+
+<button id="themeBtn">
+
+<i class="fas fa-moon"></i>
+
+Dark Mode
+
+</button>
+
+</div>
+
+</header>
+
+<!-- ==========================
+HERO
+========================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-left">
+
+<span class="badge">
+
+🚀 AI Powered Website Analysis
+
+</span>
+
+<h2>
+
+Audit Any Website
+Like A Professional SEO Expert
+
+</h2>
+
+<p>
+
+Analyze SEO, Performance,
+Accessibility, Security,
+Core Web Vitals and Website Health
+using advanced AI powered insights.
+
+</p>
+
+<div class="hero-buttons">
+
+<button class="primary-btn">
+
+Start Free Audit
+
+</button>
+
+<button class="secondary-btn">
+
+Live Demo
+
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-right">
+
+<div class="preview-card">
+
+<h3>
+
+Website Preview
+
+</h3>
+
+<div class="website-preview">
+
+🌐
+
+</div>
+
+<h4>
+
+example.com
+
+</h4>
+
+<p>
+
+Website Screenshot Preview
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+AUDIT INPUT
+========================== -->
+
+<section class="audit-section">
+
+<div class="audit-box">
+
+<input
+type="url"
+id="websiteUrl"
+placeholder="https://example.com">
+
+<button id="auditBtn">
+
+<i class="fas fa-wand-magic-sparkles"></i>
+
+Run AI Audit
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================
+LOADING
+========================== -->
+
+<section
+id="loadingSection"
+class="loading-section">
+
+<div class="loader"></div>
+
+<h3>
+
+Analyzing Website...
+
+</h3>
+
+<p>
+
+Checking SEO, Performance,
+Security and Accessibility
+
+</p>
+
+</section>
+
+<!-- ==========================
+OVERALL SCORE
+========================== -->
+
+<section class="overview-grid">
+
+<div class="overall-score-card">
+
+<div class="score-circle">
+
+<div id="overallScore">
+
+0
+
+</div>
+
+<span>
+
+Overall Score
+
+</span>
+
+</div>
+
+</div>
+
+<div class="overview-info">
+
+<div class="mini-card">
+
+<h3>
+
+🌐 Domain
+
+</h3>
+
+<p id="domainName">
+
+Not Audited
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>
+
+🔒 SSL Status
+
+</h3>
+
+<p id="sslStatus">
+
+Unknown
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>
+
+📱 Mobile Friendly
+
+</h3>
+
+<p id="mobileStatus">
+
+Unknown
+
+</p>
+
+</div>
+
+<div class="mini-card">
+
+<h3>
+
+⚡ Core Web Vitals
+
+</h3>
+
+<p id="coreVitals">
+
+Unknown
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+SCORE CARDS
+========================== -->
+
+<section class="stats-grid">
+
+<div class="stat-card">
+
+<div class="icon seo-icon">
+
+<i class="fas fa-chart-line"></i>
+
+</div>
+
+<h3 id="seoScore">
+
+0
+
+</h3>
+
+<p>
+
+SEO Score
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon performance-icon">
+
+<i class="fas fa-gauge-high"></i>
+
+</div>
+
+<h3 id="performanceScore">
+
+0
+
+</h3>
+
+<p>
+
+Performance
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon security-icon">
+
+<i class="fas fa-shield-halved"></i>
+
+</div>
+
+<h3 id="securityScore">
+
+0
+
+</h3>
+
+<p>
+
+Security
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon access-icon">
+
+<i class="fas fa-universal-access"></i>
+
+</div>
+
+<h3 id="accessibilityScore">
+
+0
+
+</h3>
+
+<p>
+
+Accessibility
+
+</p>
+
+</div>
+
+<div class="stat-card">
+
+<div class="icon speed-icon">
+
+<i class="fas fa-bolt"></i>
+
+</div>
+
+<h3 id="speedScore">
+
+0
+
+</h3>
+
+<p>
+
+Speed Score
+
+</p>
+
+</div>
+
+</section>
+<!-- ==========================
+ANALYTICS SECTION
+========================== -->
+
+<section class="analytics-grid">
+
+<div class="chart-card">
+
+<h2>
+
+📊 Audit Radar Analytics
+
+</h2>
+
+<canvas id="auditChart"></canvas>
+
+</div>
+
+<div class="chart-card">
+
+<h2>
+
+🎯 SEO Breakdown
+
+</h2>
+
+<canvas id="seoChart"></canvas>
+
+</div>
+
+</section>
+
+<!-- ==========================
+PERFORMANCE OVERVIEW
+========================== -->
+
+<section class="performance-section">
+
+<div class="dashboard-card">
+
+<h2>
+
+⚡ Performance Overview
+
+</h2>
+
+<div class="progress-wrapper">
+
+<div class="progress-item">
+
+<span>SEO</span>
+
+<div class="progress">
+
+<div
+id="seoBar"
+class="progress-fill"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<span>Performance</span>
+
+<div class="progress">
+
+<div
+id="performanceBar"
+class="progress-fill"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<span>Security</span>
+
+<div class="progress">
+
+<div
+id="securityBar"
+class="progress-fill"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<span>Accessibility</span>
+
+<div class="progress">
+
+<div
+id="accessibilityBar"
+class="progress-fill"></div>
+
+</div>
+
+</div>
+
+<div class="progress-item">
+
+<span>Speed</span>
+
+<div class="progress">
+
+<div
+id="speedBar"
+class="progress-fill"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+AUDIT RESULTS
+========================== -->
+
+<section class="dashboard-grid">
+
+<div class="dashboard-card">
+
+<h2>
+
+✅ Audit Results
+
+</h2>
+
+<div id="auditResults">
+
+<div class="empty-state">
+
+Run audit to view results
+
+</div>
+
+</div>
+
+</div>
+
+<div class="dashboard-card">
+
+<h2>
+
+❌ Issues Found
+
+</h2>
+
+<ul id="issuesList">
+
+<li>
+
+No Issues Found
+
+</li>
+
+</ul>
+
+</div>
+
+</section>
+
+<!-- ==========================
+AI RECOMMENDATIONS
+========================== -->
+
+<section class="recommendations-card">
+
+<h2>
+
+💡 AI Recommendations
+
+</h2>
+
+<ul id="recommendationList">
+
+<li>
+
+Run audit first
+
+</li>
+
+</ul>
+
+</section>
+
+<!-- ==========================
+AUDIT TIMELINE
+========================== -->
+
+<section class="timeline-card">
+
+<h2>
+
+📅 Audit Timeline
+
+</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>Audit Initialized</h4>
+
+<p>Waiting for Website Analysis</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>SEO Analysis</h4>
+
+<p>Pending</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>Performance Check</h4>
+
+<p>Pending</p>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h4>Security Scan</h4>
+
+<p>Pending</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+AI INSIGHTS
+========================== -->
+
+<section class="insight-grid">
+
+<div class="insight-card">
+
+<h3>
+
+🤖 AI Insight
+
+</h3>
+
+<p id="aiInsight">
+
+Website analysis insights will appear here.
+
+</p>
+
+</div>
+
+<div class="insight-card">
+
+<h3>
+
+🏆 Audit Grade
+
+</h3>
+
+<h1 id="auditGrade">
+
+A+
+
+</h1>
+
+</div>
+
+</section>
+
+<!-- ==========================
+EXPORT BUTTONS
+========================== -->
+
+<section class="action-buttons">
+
+<button id="downloadPdfBtn">
+
+<i class="fas fa-file-pdf"></i>
+
+Download PDF
+
+</button>
+
+<button id="exportJsonBtn">
+
+<i class="fas fa-file-code"></i>
+
+Export JSON
+
+</button>
+
+<button id="exportCsvBtn">
+
+<i class="fas fa-file-csv"></i>
+
+Export CSV
+
+</button>
+
+</section>
+
+<!-- ==========================
+FOOTER
+========================== -->
+
+<footer>
+
+<div class="footer-content">
+
+<h3>
+
+Website Audit Pro AI
+
+</h3>
+
+<p>
+
+Professional Website Intelligence Platform
+
+</p>
+
+<div class="footer-links">
+
+<a href="#">
+Home
+</a>
+
+<a href="#">
+Features
+</a>
+
+<a href="#">
+Documentation
+</a>
+
+<a href="#">
+Contact
+</a>
+
+</div>
+
+<p class="copyright">
+
+© 2026 Website Audit Pro AI
+All Rights Reserved.
+
+</p>
+
+</div>
+
+</footer>
+
+</div>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>
